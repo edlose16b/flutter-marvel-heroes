@@ -4,6 +4,7 @@ class PaginatorCubit extends Cubit<int> {
   PaginatorCubit() : super(1);
 
   void setPage(int page) {
+    if (state == page) return;
     emit(page);
   }
 

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:dd3/core/constants.dart';
 import 'package:dd3/features/home/logic/heroes_cubit.dart';
 import 'package:dd3/features/home/logic/heroes_state.dart';
 import 'package:dd3/features/home/logic/paginator_cubit.dart';
@@ -49,22 +50,20 @@ class _HomeContentState extends State<HomeContent> {
     _scrollController.addListener(handleListener);
   }
 
+  @override
+  void dispose() {
+    _scrollController.removeListener(handleListener);
+    super.dispose();
+  }
+
   void handleListener() {
-    if (_scrollController.offset >=
-        _scrollController.position.maxScrollExtent - perRowSize) {
+    if (isAboutToBottom) {
       context.read<HeroesCubit>().loadMore();
     }
 
-    if (_scrollController.position.atEdge) {
-      final isBottom = _scrollController.position.pixels != 0;
-      if (isBottom) {
-        log('At the bottom');
-        paginatorCubit.addPage();
-      } else {
-        log('At the top');
-        paginatorCubit.subtractPage();
-      }
-    }
+    final currentPage =
+        _scrollController.offset ~/ (perRowSize * Constants.heroesPerPage / 2);
+    context.read<PaginatorCubit>().setPage(currentPage + 1);
   }
 
   // void _toPosition(double index) {
@@ -118,4 +117,8 @@ class _HomeContentState extends State<HomeContent> {
       },
     );
   }
+
+  bool get isAboutToBottom =>
+      _scrollController.offset >=
+      _scrollController.position.maxScrollExtent - perRowSize;
 }
