@@ -7,7 +7,8 @@ class PaginatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final page = context.select((PaginatorCubit cubit) => cubit.state);
+    final page =
+        context.select((PaginatorCubit cubit) => cubit.state.currentPage);
     return SafeArea(
       maintainBottomViewPadding: true,
       child: Container(
@@ -24,7 +25,10 @@ class PaginatorWidget extends StatelessWidget {
         ),
         child: _PaginatorWidget(
           onPagePressed: (page) {
-            context.read<PaginatorCubit>().setPage(page);
+            context.read<PaginatorCubit>().setPage(
+                  page,
+                  origin: PaginatorChangeOrigin.paginator,
+                );
           },
           currentPage: page,
           lastPage: 20,

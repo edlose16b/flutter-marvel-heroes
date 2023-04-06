@@ -1,20 +1,44 @@
 import 'package:bloc/bloc.dart';
 
-class PaginatorCubit extends Cubit<int> {
-  PaginatorCubit() : super(1);
+class PaginatorCubit extends Cubit<PaginatorState> {
+  PaginatorCubit() : super(PaginatorState(currentPage: 1, origin: null));
 
-  void setPage(int page) {
-    if (state == page) return;
-    emit(page);
+  void setPage(int page, {PaginatorChangeOrigin? origin}) {
+    if (state.currentPage == page) return;
+    emit(state.copyWith(currentPage: page, origin: origin));
   }
 
   void addPage() {
-    if (state == 20) return;
-    emit(state + 1);
+    emit(
+      state.copyWith(
+        currentPage: state.currentPage + 1,
+        origin: PaginatorChangeOrigin.scroll,
+      ),
+    );
   }
 
   void subtractPage() {
-    if (state == 1) return;
-    emit(state - 1);
+    emit(
+      state.copyWith(
+        currentPage: state.currentPage - 1,
+        origin: PaginatorChangeOrigin.scroll,
+      ),
+    );
+  }
+}
+
+enum PaginatorChangeOrigin { paginator, scroll }
+
+class PaginatorState {
+  PaginatorState({required this.currentPage, required this.origin});
+
+  final int currentPage;
+  final PaginatorChangeOrigin? origin;
+
+  PaginatorState copyWith({int? currentPage, PaginatorChangeOrigin? origin}) {
+    return PaginatorState(
+      currentPage: currentPage ?? this.currentPage,
+      origin: origin ?? this.origin,
+    );
   }
 }
