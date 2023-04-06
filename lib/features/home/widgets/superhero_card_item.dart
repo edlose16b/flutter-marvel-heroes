@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SuperHeroCardItem extends StatelessWidget {
-  const SuperHeroCardItem({super.key});
-
+  const SuperHeroCardItem({super.key, required this.index});
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -33,13 +33,13 @@ class SuperHeroCardItem extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
+          Positioned(
             bottom: 10,
             left: 10,
             right: 10,
             child: Text(
-              'Item ',
-              style: TextStyle(
+              'Item $index',
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
