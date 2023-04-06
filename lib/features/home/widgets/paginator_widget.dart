@@ -31,7 +31,6 @@ class PaginatorWidget extends StatelessWidget {
                 );
           },
           currentPage: page,
-          lastPage: 20,
         ),
       ),
     );
@@ -41,17 +40,15 @@ class PaginatorWidget extends StatelessWidget {
 class _PaginatorWidget extends StatelessWidget {
   const _PaginatorWidget({
     required this.currentPage,
-    required this.lastPage,
     required this.onPagePressed,
   });
   final int currentPage;
-  final int lastPage;
   final void Function(int) onPagePressed;
 
   @override
   Widget build(BuildContext context) {
     final visiblePages = <int>[];
-
+    final lastPage = currentPage + 2;
     if (lastPage <= 5) {
       visiblePages.addAll(List.generate(lastPage, (index) => index + 1));
     } else if (currentPage <= 3) {
@@ -60,8 +57,15 @@ class _PaginatorWidget extends StatelessWidget {
       visiblePages
           .addAll([1, -1, lastPage - 3, lastPage - 2, lastPage - 1, lastPage]);
     } else {
-      visiblePages.addAll(
-          [1, -1, currentPage - 1, currentPage, currentPage + 1, -1, lastPage]);
+      visiblePages.addAll([
+        1,
+        -1,
+        currentPage - 1,
+        currentPage,
+        currentPage + 1,
+        -1,
+        lastPage,
+      ]);
     }
 
     return Row(
