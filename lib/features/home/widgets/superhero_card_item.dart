@@ -4,6 +4,7 @@ import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:marvel/marvel.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 class SuperHeroCardItem extends StatelessWidget {
   const SuperHeroCardItem({super.key, required this.character});
 
@@ -66,7 +67,7 @@ class SuperHeroCardItem extends StatelessWidget {
             ),
           ],
         ),
-      ).animate().fadeIn(duration: const Duration(seconds: 1)),
+      ).animate().fadeIn(duration: const Duration(seconds: 1)).scale(),
     );
   }
 }
