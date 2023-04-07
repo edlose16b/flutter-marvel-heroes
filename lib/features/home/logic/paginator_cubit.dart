@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 
 class PaginatorCubit extends Cubit<PaginatorState> {
   PaginatorCubit() : super(PaginatorState(currentPage: 1, origin: null));
@@ -29,8 +30,8 @@ class PaginatorCubit extends Cubit<PaginatorState> {
 
 enum PaginatorChangeOrigin { paginator, scroll }
 
-class PaginatorState {
-  PaginatorState({required this.currentPage, required this.origin});
+class PaginatorState extends Equatable {
+  const PaginatorState({required this.currentPage, required this.origin});
 
   final int currentPage;
   final PaginatorChangeOrigin? origin;
@@ -41,4 +42,7 @@ class PaginatorState {
       origin: origin ?? this.origin,
     );
   }
+
+  @override
+  List<Object?> get props => [currentPage, origin];
 }

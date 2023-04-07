@@ -38,7 +38,3 @@ class HeroesCubit extends Cubit<HeroesState> {
     });
   }
 }
-
-class LoadingsCubit extends Cubit<Map<String, dynamic>> {
-  LoadingsCubit(super.initialState);
-}
