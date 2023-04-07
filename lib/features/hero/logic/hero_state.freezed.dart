@@ -24,15 +24,14 @@ mixin _$HeroState {
   List<Story>? get stories => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CharacterStateCopyWith<HeroState> get copyWith =>
+  $HeroStateCopyWith<HeroState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CharacterStateCopyWith<$Res> {
-  factory $CharacterStateCopyWith(
-          HeroState value, $Res Function(HeroState) then) =
-      _$CharacterStateCopyWithImpl<$Res, HeroState>;
+abstract class $HeroStateCopyWith<$Res> {
+  factory $HeroStateCopyWith(HeroState value, $Res Function(HeroState) then) =
+      _$HeroStateCopyWithImpl<$Res, HeroState>;
   @useResult
   $Res call(
       {Character character,
@@ -44,9 +43,9 @@ abstract class $CharacterStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CharacterStateCopyWithImpl<$Res, $Val extends HeroState>
-    implements $CharacterStateCopyWith<$Res> {
-  _$CharacterStateCopyWithImpl(this._value, this._then);
+class _$HeroStateCopyWithImpl<$Res, $Val extends HeroState>
+    implements $HeroStateCopyWith<$Res> {
+  _$HeroStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -94,7 +93,7 @@ class _$CharacterStateCopyWithImpl<$Res, $Val extends HeroState>
 
 /// @nodoc
 abstract class _$$_CharacterStateDataClassCopyWith<$Res>
-    implements $CharacterStateCopyWith<$Res> {
+    implements $HeroStateCopyWith<$Res> {
   factory _$$_CharacterStateDataClassCopyWith(_$_CharacterStateDataClass value,
           $Res Function(_$_CharacterStateDataClass) then) =
       __$$_CharacterStateDataClassCopyWithImpl<$Res>;
@@ -111,7 +110,7 @@ abstract class _$$_CharacterStateDataClassCopyWith<$Res>
 
 /// @nodoc
 class __$$_CharacterStateDataClassCopyWithImpl<$Res>
-    extends _$CharacterStateCopyWithImpl<$Res, _$_CharacterStateDataClass>
+    extends _$HeroStateCopyWithImpl<$Res, _$_CharacterStateDataClass>
     implements _$$_CharacterStateDataClassCopyWith<$Res> {
   __$$_CharacterStateDataClassCopyWithImpl(_$_CharacterStateDataClass _value,
       $Res Function(_$_CharacterStateDataClass) _then)
