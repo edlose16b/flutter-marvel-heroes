@@ -16,6 +16,7 @@ import 'package:marvel/src/infraestructure/models/story_model.dart';
 
 /// api uri
 const apiUri = 'https://gateway.marvel.com:443/v1/public/characters';
+const limit = 20;
 
 /// {@template characters_marvel_datasource}
 /// Implementation for Marvel API
@@ -27,9 +28,9 @@ class CharactersMarvelDataSource implements CharactersRemoteDataSource {
   final Dio _dio;
 
   @override
-  Future<List<CharacterModel>> fetchCharacters() async {
+  Future<List<CharacterModel>> fetchCharacters({int? offset}) async {
     return _fetchData(
-      '',
+      '?limit=$limit&offset=${offset ?? 0}',
       (e) => CharacterModel.fromJson(e as Map<String, dynamic>),
     );
   }

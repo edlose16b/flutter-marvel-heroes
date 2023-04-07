@@ -7,7 +7,7 @@ import 'package:marvel/src/infraestructure/models/character_model.dart';
 /// Remote Characters Datasource
 abstract class CharactersRemoteDataSource {
   /// Fetch all characters
-  Future<List<CharacterModel>> fetchCharacters();
+  Future<List<CharacterModel>> fetchCharacters({int? offset});
 
   /// Fetch comics by character
   Future<List<Comic>> fetchComics(int characterId);

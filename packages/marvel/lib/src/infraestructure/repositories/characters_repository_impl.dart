@@ -19,9 +19,11 @@ class CharactersRepositoryImpl implements CharactersRepository {
   final CharactersRemoteDataSource _dataSource;
 
   @override
-  Future<Either<Failure, List<Character>>> fetchCharacters() async {
+  Future<Either<Failure, List<Character>>> fetchCharacters({
+    int? offset,
+  }) async {
     try {
-      final response = await _dataSource.fetchCharacters();
+      final response = await _dataSource.fetchCharacters(offset: offset);
       return Right(response);
     } catch (e) {
       return Left(ServerFailure());

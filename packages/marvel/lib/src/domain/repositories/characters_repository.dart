@@ -9,7 +9,7 @@ import 'package:marvel/src/domain/entities/story.dart';
 /// Characters Repository cotnract
 abstract class CharactersRepository {
   /// Fetch all characters
-  Future<Either<Failure, List<Character>>> fetchCharacters();
+  Future<Either<Failure, List<Character>>> fetchCharacters({int? offset});
 
   /// Fetch comics by character
   Future<Either<Failure, List<Comic>>> fetchComics(int characterId);

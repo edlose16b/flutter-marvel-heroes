@@ -6,7 +6,9 @@ import 'package:marvel/marvel.dart';
 /// {@endtemplate}
 class SampleCharactersRepository implements CharactersRepository {
   @override
-  Future<Either<Failure, List<Character>>> fetchCharacters() async {
+  Future<Either<Failure, List<Character>>> fetchCharacters({
+    int? offset,
+  }) async {
     return Right([
       Character(
         id: 1,
