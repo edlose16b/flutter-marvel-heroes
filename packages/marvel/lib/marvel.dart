@@ -15,4 +15,5 @@ export 'package:marvel/src/infraestructure/dto/pagination_response.dart';
 export 'package:marvel/src/infraestructure/repositories/characters_repository_impl.dart';
 export 'package:marvel/src/infraestructure/repositories/sample_characters_repository.dart';
 
+export 'src/infraestructure/datasources/utils.dart';
 export 'src/mock/mocks.dart';
