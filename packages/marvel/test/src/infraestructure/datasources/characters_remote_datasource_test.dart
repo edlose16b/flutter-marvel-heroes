@@ -23,7 +23,7 @@ void main() {
           simulateMarvelResponse([characterJson1, characterJson1]);
 
       dioAdapter.onGet(
-        '',
+        '?limit=20&offset=0',
         (server) => server.reply(HttpStatus.ok, responseJson),
       );
 
