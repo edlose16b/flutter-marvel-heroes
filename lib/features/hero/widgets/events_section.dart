@@ -33,22 +33,23 @@ class EventsSection extends StatelessWidget {
 
   Widget _buildList(List<Event> events) {
     return SizedBox(
-      height: 280,
+      height: 250,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: events.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final event = events[index];
-          return Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Expanded(
-                child:
-                    ImageTitle(imageUrl: event.thumbnail, title: event.title),
-              ),
-              Text(DateFormat('yyyy-MM').format(event.start)),
-            ],
+          return ImageTitle(
+            thumbnail: event.thumbnail,
+            title: event.title,
+            extra: Column(
+              children: [
+                Text(event.description),
+                Text('${DateFormat('yyyy-MM').format(event.start)}-'
+                    '${DateFormat('yyyy-MM').format(event.end)}'),
+              ],
+            ),
           );
         },
       ),

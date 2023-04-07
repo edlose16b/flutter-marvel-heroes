@@ -33,14 +33,23 @@ class SeriesSection extends StatelessWidget {
 
   Widget _buildList(List<Serie> series) {
     return SizedBox(
-      height: 270,
+      height: 230,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: series.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final serie = series[index];
-          return ImageTitle(imageUrl: serie.thumbnail, title: serie.title);
+          return ImageTitle(
+            thumbnail: serie.thumbnail,
+            title: serie.title,
+            extra: Column(
+              children: [
+                if (serie.description != null) Text(serie.description!),
+                if (serie.rating.isNotEmpty) Text(serie.rating),
+              ],
+            ),
+          );
         },
       ),
     );

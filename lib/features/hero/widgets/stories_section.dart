@@ -34,14 +34,18 @@ class StoriesSection extends StatelessWidget {
 
   Widget _buildList(List<Story> stories) {
     return SizedBox(
-      height: 270,
+      height: 230,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: stories.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final story = stories[index];
-          return ImageTitle(imageUrl: story.thumbnail, title: story.title);
+          return ImageTitle(
+            thumbnail: story.thumbnail,
+            title: story.title,
+            extra: Text(story.description),
+          );
         },
       ),
     );

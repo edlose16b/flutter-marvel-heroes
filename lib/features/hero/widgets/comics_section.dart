@@ -1,5 +1,6 @@
 import 'package:dd3/app/ui/sizes.dart';
 import 'package:dd3/features/hero/logic/character_cubit.dart';
+import 'package:dd3/features/hero/widgets/detail_modal.dart';
 import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
@@ -34,14 +35,23 @@ class ComicsSection extends StatelessWidget {
 
   Widget _buildList(List<Comic> comics) {
     return SizedBox(
-      height: 270,
+      height: 230,
       child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: comics.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           final comic = comics[index];
-          return ImageTitle(imageUrl: comic.thumbnail, title: comic.title);
+
+          return ImageTitle(
+            thumbnail: comic.thumbnail,
+            title: comic.title,
+            extra: Column(
+              children: [
+                if (comic.description != null) Text(comic.description!),
+              ],
+            ),
+          );
         },
       ),
     );

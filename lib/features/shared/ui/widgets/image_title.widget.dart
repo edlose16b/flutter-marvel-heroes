@@ -1,3 +1,4 @@
+import 'package:dd3/features/hero/widgets/detail_modal.dart';
 import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -11,40 +12,35 @@ class ImageTitle extends StatelessWidget {
   /// {@macro image_title}
   const ImageTitle({
     super.key,
-    required this.imageUrl,
+    required this.thumbnail,
     required this.title,
+    this.extra,
   });
 
-  final String? imageUrl;
+  final String? thumbnail;
   final String title;
+  final Widget? extra;
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: const BoxConstraints(
-        minWidth: 150,
-        maxWidth: 150,
-        minHeight: 200,
-        maxHeight: 230,
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            margin: const EdgeInsets.all(10),
-            height: 200,
-            child: NetworkImageWidget(
-              imageUrl: imageUrl != null ? imageUrl! : noImageMarvel,
-              imageWidgetBuilder: (image) {
-                return Image(
-                  image: image,
-                  fit: BoxFit.cover,
-                );
-              },
-            ),
-          ),
-          Text(title),
-        ],
+    final secureThumbnail = thumbnail ?? noImageMarvel;
+
+    return InkWell(
+      onTap: () {
+        DetailModal.showModal(context, secureThumbnail, title, extra);
+      },
+      child: Container(
+        margin: const EdgeInsets.all(10),
+        height: 180,
+        child: NetworkImageWidget(
+          imageUrl: secureThumbnail,
+          imageWidgetBuilder: (image) {
+            return Image(
+              image: image,
+              fit: BoxFit.cover,
+            );
+          },
+        ),
       ),
     );
   }
