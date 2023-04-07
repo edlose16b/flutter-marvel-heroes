@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:marvel/marvel.dart';
 
-part 'character_state.freezed.dart';
+part 'hero_state.freezed.dart';
 
 enum CharacterStateStatus { initial, loading, failed, loaded }
 
@@ -15,10 +15,4 @@ abstract class CharacterState with _$CharacterState {
     List<Serie>? series,
     List<Story>? stories,
   }) = _CharacterStateDataClass;
-
-  // factory CharacterState.initial() = CharacterStateInitial;
-  // factory CharacterState.loading() = CharacterStateLoading;
-  // factory CharacterState.failed() = CharacterStateFailed;
-  // factory CharacterState.loaded({required List<Comic> comics}) =
-  //     CharacterStateLoaded;
 }

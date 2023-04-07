@@ -2,12 +2,12 @@
 
 import 'dart:async';
 
-import 'package:dd3/features/hero/logic/character_state.dart';
+import 'package:dd3/features/hero/logic/hero_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 
-class CharacterCubit extends Cubit<CharacterState> {
-  CharacterCubit({
+class HeroCubit extends Cubit<CharacterState> {
+  HeroCubit({
     required this.charactersRepository,
     required this.character,
   }) : super(

@@ -1,5 +1,5 @@
 import 'package:dd3/app/ui/sizes.dart';
-import 'package:dd3/features/hero/logic/character_cubit.dart';
+import 'package:dd3/features/hero/logic/hero_cubit.dart';
 import 'package:dd3/features/hero/widgets/comics_section.dart';
 import 'package:dd3/features/hero/widgets/events_section.dart';
 import 'package:dd3/features/hero/widgets/series_section.dart';
@@ -27,7 +27,7 @@ class HeroView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CharacterCubit(
+      create: (context) => HeroCubit(
         character: character,
         charactersRepository: context.read(),
       )..fetchData(),

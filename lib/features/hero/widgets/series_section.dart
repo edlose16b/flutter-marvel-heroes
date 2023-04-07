@@ -1,5 +1,5 @@
 import 'package:dd3/app/ui/sizes.dart';
-import 'package:dd3/features/hero/logic/character_cubit.dart';
+import 'package:dd3/features/hero/logic/hero_cubit.dart';
 import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,7 @@ class SeriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final series = context.select((CharacterCubit cubit) => cubit.state.series);
+    final series = context.select((HeroCubit cubit) => cubit.state.series);
     if (series != null && series.isEmpty) return const SizedBox.shrink();
 
     return Column(
