@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:marvel/marvel.dart';
 
 part 'heroes_state.freezed.dart';
 
@@ -9,6 +10,6 @@ abstract class HeroesState with _$HeroesState {
   const factory HeroesState({
     required HeroesStatus status,
     required int itemsLoading,
-    required List<int> heroes,
+    required List<Character> heroes,
   }) = _HeroesStateDataClass;
 }

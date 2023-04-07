@@ -1,14 +1,18 @@
 import 'package:dd3/features/hero/pages/hero_view.dart';
+import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:marvel/marvel.dart';
 
 class SuperHeroCardItem extends StatelessWidget {
-  const SuperHeroCardItem({super.key, required this.index});
-  final int index;
+  const SuperHeroCardItem({super.key, required this.character});
+
+  final Character character;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(context, HeroView.route());
+        Navigator.push(context, HeroView.route(character: character));
       },
       child: Card(
         shape: RoundedRectangleBorder(
@@ -21,9 +25,8 @@ class SuperHeroCardItem extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                      'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg'),
+                image: DecorationImage(
+                  image: NetworkImage(character.thumbnail ?? noImageMarvel),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -43,7 +46,7 @@ class SuperHeroCardItem extends StatelessWidget {
               left: 10,
               right: 10,
               child: Text(
-                'Item $index',
+                character.name,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 24,

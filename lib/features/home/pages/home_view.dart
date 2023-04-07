@@ -18,7 +18,8 @@ class HomeView extends StatelessWidget {
           create: (_) => PaginatorCubit(),
         ),
         BlocProvider(
-          create: (_) => HeroesCubit()..loadMore(),
+          create: (_) =>
+              HeroesCubit(charactersRepository: context.read())..loadMore(),
         ),
       ],
       child: const HomeContent(),
@@ -91,9 +92,7 @@ class _HomeContentState extends State<HomeContent> {
           );
         }
 
-        return SuperHeroCardItem(
-          index: index,
-        );
+        return SuperHeroCardItem(character: state.heroes[index]);
       },
     );
   }

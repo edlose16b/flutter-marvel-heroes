@@ -1,21 +1,42 @@
+import 'package:dd3/app/ui/sizes.dart';
+import 'package:dd3/features/hero/logic/character_cubit.dart';
+import 'package:dd3/features/hero/widgets/comics_section.dart';
+import 'package:dd3/features/hero/widgets/events_section.dart';
+import 'package:dd3/features/hero/widgets/series_section.dart';
+import 'package:dd3/features/hero/widgets/stories_section.dart';
+import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel/marvel.dart';
 
 class HeroView extends StatelessWidget {
-  const HeroView({super.key});
+  const HeroView({
+    super.key,
+    required this.character,
+  });
 
-  static Route<dynamic> route() => MaterialPageRoute(
-        builder: (_) => const HeroView(),
+  final Character character;
+
+  static Route<dynamic> route({required Character character}) =>
+      MaterialPageRoute(
+        builder: (_) => HeroView(character: character),
       );
 
   @override
   Widget build(BuildContext context) {
-    return const HeroContent();
+    return BlocProvider(
+      create: (context) => CharacterCubit(
+        character: character,
+        charactersRepository: context.read(),
+      )..fetchData(),
+      child: HeroContent(character: character),
+    );
   }
 }
 
 class HeroContent extends StatefulWidget {
-  const HeroContent({super.key});
-
+  const HeroContent({super.key, required this.character});
+  final Character character;
   @override
   State<HeroContent> createState() => _HeroContentState();
 }
@@ -28,7 +49,7 @@ class _HeroContentState extends State<HeroContent> {
         fit: StackFit.expand,
         children: <Widget>[
           Image.network(
-            'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784.jpg',
+            widget.character.thumbnail ?? noImageMarvel,
             fit: BoxFit.cover,
           ),
           Container(
@@ -52,30 +73,27 @@ class _HeroContentState extends State<HeroContent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(height: MediaQuery.of(context).size.height * .5),
-                  const Text(
-                    'Título de la imagen',
-                    style: TextStyle(
+                  Text(
+                    widget.character.name,
+                    style: const TextStyle(
                       fontSize: 55,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Descripción de la imagen',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                    ),
+                    widget.character.description,
+                    style: const TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 16.0),
-                  Text(
-                    'Más',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(height: MediaQuery.of(context).size.height * .6),
+                  const SizedBox(height: 16),
+                  const SizedBox(height: Sizes.mid),
+                  const ComicsSection(),
+                  const SizedBox(height: Sizes.mid),
+                  const EventsSection(),
+                  const SizedBox(height: Sizes.mid),
+                  const SeriesSection(),
+                  const SizedBox(height: Sizes.mid),
+                  const StoriesSection(),
                 ],
               ),
             ),

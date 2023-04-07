@@ -1,9 +1,10 @@
 import 'package:dd3/core/constants.dart';
 import 'package:dd3/features/home/logic/heroes_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marvel/marvel.dart';
 
 class HeroesCubit extends Cubit<HeroesState> {
-  HeroesCubit()
+  HeroesCubit({required this.charactersRepository})
       : super(
           const HeroesState(
             status: HeroesStatus.initial,
@@ -11,24 +12,30 @@ class HeroesCubit extends Cubit<HeroesState> {
             itemsLoading: Constants.heroesPerPage,
           ),
         );
-
+  final CharactersRepository charactersRepository;
   Future<void> loadMore() async {
     if (state.status == HeroesStatus.loading) return;
-    
+
     emit(
       state.copyWith(
         status: HeroesStatus.loading,
         itemsLoading: Constants.heroesPerPage,
       ),
     );
-    await Future<void>.delayed(const Duration(milliseconds: 3000));
-    emit(
-      state.copyWith(
-        status: HeroesStatus.loaded,
-        itemsLoading: 0,
-        heroes: [...state.heroes, ...List.filled(20, 1)],
-      ),
-    );
+    final response =
+        await charactersRepository.fetchCharacters(offset: state.heroes.length);
+
+    response.fold((l) {
+      emit(state.copyWith(status: HeroesStatus.failed));
+    }, (r) {
+      emit(
+        state.copyWith(
+          status: HeroesStatus.loaded,
+          itemsLoading: 0,
+          heroes: [...state.heroes, ...r],
+        ),
+      );
+    });
   }
 }
 

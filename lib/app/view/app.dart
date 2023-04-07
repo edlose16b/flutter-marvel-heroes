@@ -1,3 +1,5 @@
+import 'package:dd3/app/bloc_dependencies.dart';
+import 'package:dd3/app/dependency_injections.dart';
 import 'package:dd3/app/themes.dart';
 import 'package:dd3/features/home/pages/home_view.dart';
 import 'package:dd3/l10n/l10n.dart';
@@ -8,13 +10,17 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: buildLightTheme(context),
-      darkTheme: buildDarkTheme(context),
-      themeMode: ThemeMode.dark,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomeView(),
+    return DependencyInjections(
+      child: BlocDependencies(
+        child: MaterialApp(
+          theme: buildLightTheme(context),
+          darkTheme: buildDarkTheme(context),
+          themeMode: ThemeMode.dark,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const HomeView(),
+        ),
+      ),
     );
   }
 }

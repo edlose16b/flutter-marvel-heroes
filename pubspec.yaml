@@ -24,6 +24,9 @@ dependencies:
   google_fonts: ^4.0.3
   intl: ^0.17.0
 
+  marvel:
+    path: ./packages/marvel
+    
   shimmer: ^2.0.0
 
 dev_dependencies:

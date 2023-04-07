@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HeroesState {
   HeroesStatus get status => throw _privateConstructorUsedError;
   int get itemsLoading => throw _privateConstructorUsedError;
-  List<int> get heroes => throw _privateConstructorUsedError;
+  List<Character> get heroes => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HeroesStateCopyWith<HeroesState> get copyWith =>
@@ -31,7 +31,7 @@ abstract class $HeroesStateCopyWith<$Res> {
           HeroesState value, $Res Function(HeroesState) then) =
       _$HeroesStateCopyWithImpl<$Res, HeroesState>;
   @useResult
-  $Res call({HeroesStatus status, int itemsLoading, List<int> heroes});
+  $Res call({HeroesStatus status, int itemsLoading, List<Character> heroes});
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$HeroesStateCopyWithImpl<$Res, $Val extends HeroesState>
       heroes: null == heroes
           ? _value.heroes
           : heroes // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<Character>,
     ) as $Val);
   }
 }
@@ -76,7 +76,7 @@ abstract class _$$_HeroesStateDataClassCopyWith<$Res>
       __$$_HeroesStateDataClassCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({HeroesStatus status, int itemsLoading, List<int> heroes});
+  $Res call({HeroesStatus status, int itemsLoading, List<Character> heroes});
 }
 
 /// @nodoc
@@ -106,7 +106,7 @@ class __$$_HeroesStateDataClassCopyWithImpl<$Res>
       heroes: null == heroes
           ? _value._heroes
           : heroes // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+              as List<Character>,
     ));
   }
 }
@@ -117,16 +117,16 @@ class _$_HeroesStateDataClass implements _HeroesStateDataClass {
   const _$_HeroesStateDataClass(
       {required this.status,
       required this.itemsLoading,
-      required final List<int> heroes})
+      required final List<Character> heroes})
       : _heroes = heroes;
 
   @override
   final HeroesStatus status;
   @override
   final int itemsLoading;
-  final List<int> _heroes;
+  final List<Character> _heroes;
   @override
-  List<int> get heroes {
+  List<Character> get heroes {
     if (_heroes is EqualUnmodifiableListView) return _heroes;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_heroes);
@@ -164,14 +164,14 @@ abstract class _HeroesStateDataClass implements HeroesState {
   const factory _HeroesStateDataClass(
       {required final HeroesStatus status,
       required final int itemsLoading,
-      required final List<int> heroes}) = _$_HeroesStateDataClass;
+      required final List<Character> heroes}) = _$_HeroesStateDataClass;
 
   @override
   HeroesStatus get status;
   @override
   int get itemsLoading;
   @override
-  List<int> get heroes;
+  List<Character> get heroes;
   @override
   @JsonKey(ignore: true)
   _$$_HeroesStateDataClassCopyWith<_$_HeroesStateDataClass> get copyWith =>
