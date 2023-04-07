@@ -26,8 +26,10 @@ class EventModel extends Event {
       thumbnail:
           thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
       modified: DateTime.parse(json['modified'] as String),
-      start: DateTime.parse(json['start'] as String),
-      end: DateTime.parse(json['end'] as String),
+      start: json['start'] != null
+          ? DateTime.parse(json['start'] as String)
+          : null,
+      end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
     );
   }
 }

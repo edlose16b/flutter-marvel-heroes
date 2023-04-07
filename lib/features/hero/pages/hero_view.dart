@@ -4,8 +4,10 @@ import 'package:dd3/features/hero/widgets/comics_section.dart';
 import 'package:dd3/features/hero/widgets/events_section.dart';
 import 'package:dd3/features/hero/widgets/series_section.dart';
 import 'package:dd3/features/hero/widgets/stories_section.dart';
+import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 
@@ -52,9 +54,17 @@ class _HeroContentState extends State<HeroContent> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Image.network(
-            widget.character.thumbnail ?? noImageMarvel,
-            fit: BoxFit.cover,
+          NetworkImageWidget(
+            imageUrl: widget.character.thumbnail ?? noImageMarvel,
+            imageWidgetBuilder: (image) {
+              return Hero(
+                tag: 'hero-${widget.character.id}-image',
+                child: Image(
+                  image: image,
+                  fit: BoxFit.cover,
+                ),
+              );
+            },
           ),
           Container(
             decoration: BoxDecoration(
@@ -63,10 +73,11 @@ class _HeroContentState extends State<HeroContent> {
                 end: Alignment.bottomCenter,
                 colors: [
                   Colors.transparent,
+                  Colors.black.withOpacity(0.4),
                   Colors.black.withOpacity(0.6),
-                  Colors.black.withOpacity(0.9),
+                  Colors.black.withOpacity(1),
                 ],
-                stops: const [0.0, 0.7, 1.0],
+                stops: const [0.0, .3, 0.7, 1.0],
               ),
             ),
           ),
@@ -77,12 +88,15 @@ class _HeroContentState extends State<HeroContent> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(height: MediaQuery.of(context).size.height * .5),
-                  Text(
-                    widget.character.name,
-                    style: const TextStyle(
-                      fontSize: 55,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Hero(
+                    tag: 'hero-${widget.character.id}',
+                    child: Text(
+                      widget.character.name,
+                      style: const TextStyle(
+                        fontSize: 55,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ).animate().fadeIn().scale(),
                   ),
                   const SizedBox(height: 16),
                   Text(

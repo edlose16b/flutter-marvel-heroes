@@ -22,6 +22,6 @@ class Event {
   String description;
   String? thumbnail;
   DateTime modified;
-  DateTime start;
-  DateTime end;
+  DateTime? start;
+  DateTime? end;
 }

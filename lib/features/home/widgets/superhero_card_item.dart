@@ -1,8 +1,9 @@
 import 'package:dd3/features/hero/pages/hero_view.dart';
+import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:marvel/marvel.dart';
-
+import 'package:flutter_animate/flutter_animate.dart';
 class SuperHeroCardItem extends StatelessWidget {
   const SuperHeroCardItem({super.key, required this.character});
 
@@ -22,14 +23,22 @@ class SuperHeroCardItem extends StatelessWidget {
         margin: const EdgeInsets.all(10),
         child: Stack(
           children: [
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: NetworkImage(character.thumbnail ?? noImageMarvel),
-                  fit: BoxFit.cover,
-                ),
-              ),
+            NetworkImageWidget(
+              imageUrl: character.thumbnail ?? noImageMarvel,
+              imageWidgetBuilder: (image) {
+                return Hero(
+                  tag: 'hero-${character.id}-image',
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(
+                        image: image,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                );
+              },
             ),
             Container(
               decoration: BoxDecoration(
@@ -57,7 +66,7 @@ class SuperHeroCardItem extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      ).animate().fadeIn(duration: const Duration(seconds: 1)),
     );
   }
 }

@@ -46,8 +46,9 @@ class EventsSection extends StatelessWidget {
             extra: Column(
               children: [
                 Text(event.description),
-                Text('${DateFormat('yyyy-MM').format(event.start)}-'
-                    '${DateFormat('yyyy-MM').format(event.end)}'),
+                if (event.start != null && event.end != null)
+                  Text('${DateFormat('yyyy-MM').format(event.start!)}-'
+                      '${DateFormat('yyyy-MM').format(event.end!)}'),
               ],
             ),
           );

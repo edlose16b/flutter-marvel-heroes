@@ -4,6 +4,8 @@ import 'package:dd3/features/home/logic/heroes_state.dart';
 import 'package:dd3/features/home/logic/paginator_cubit.dart';
 import 'package:dd3/features/home/widgets/paginator_widget.dart';
 import 'package:dd3/features/home/widgets/superhero_card_item.dart';
+import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
+import 'package:dd3/features/shared/ui/loadings/hero_card_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -87,9 +89,7 @@ class _HomeContentState extends State<HomeContent> {
       itemBuilder: (context, index) {
         if (state.status == HeroesStatus.loading &&
             index >= state.heroes.length) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const HeroCardLoader();
         }
 
         return SuperHeroCardItem(character: state.heroes[index]);
