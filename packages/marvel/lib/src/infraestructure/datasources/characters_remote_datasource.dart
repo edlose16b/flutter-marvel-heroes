@@ -15,7 +15,6 @@ import 'package:marvel/src/infraestructure/models/serie_model.dart';
 import 'package:marvel/src/infraestructure/models/story_model.dart';
 
 /// api uri
-const apiUri = 'https://gateway.marvel.com:443/v1/public/characters';
 const limit = 20;
 
 /// {@template characters_marvel_datasource}
