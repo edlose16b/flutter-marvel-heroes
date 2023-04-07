@@ -10,149 +10,46 @@ A Very Good Project created by Very Good CLI.
 
 ---
 
-## Getting Started 🚀
-
-This project contains 3 flavors:
-
-- development
-- staging
-- production
-
-To run the desired flavor either use the launch configuration in VSCode/Android Studio or use the following commands:
+## Demo it 📱
 
 ```sh
-# Development
-$ flutter run --flavor development --target lib/main_development.dart
-
-# Staging
-$ flutter run --flavor staging --target lib/main_staging.dart
-
-# Production
-$ flutter run --flavor production --target lib/main_production.dart
+# crear .env and complete it using your variables
+cp .env.example .env
+# Install dependencies 
+$ flutter pub get && flutter pub run build_runner build --delete-conflicting-outputs
+# run project
+flutter run --flavor development --target lib/main_development.dart
 ```
+## Demo
+![marvel-api](https://user-images.githubusercontent.com/58694638/230679979-db5242fd-312c-4541-8f23-b1bd619d0901.gif)
 
-_\*Dd3 works on iOS, Android, Web, and Windows._
 
----
+## Preguntas y Respuestas
 
-## Running Tests 🧪
 
-To run all unit and widget tests use the following command:
+<details>
+  <summary>Por qué very_good_cli?</summary>
+  
+  Para este reto use very_good_cli porque estoy acostumbrado a usar esta herramienta en mis proyectos de Flutter, porque me da lo necesario para comenzar un proyecto.
+Me ayuda a trabajar con flavors, traducciones y además que usa FlutterBloc.
+ 
+</details>
 
-```sh
-$ flutter test --coverage --test-randomize-ordering-seed random
-```
+<details>
+  <summary>Por qué separarlo en subpaquetes?</summary>
+  
+El concepto de un paquete es que haga algo en especifico, en este caso el paquete `marvel` es el encargado de hacer la comunicación con el backend.
+Entonces en mi proyecto flutter, yo utilizo el paquete `marvel` y soy agnostico a lo que suceda interiormente.
+ 
+</details>
 
-To view the generated coverage report you can use [lcov](https://github.com/linux-test-project/lcov).
+<details>
+  <summary>Por qué Flutter BLoC</summary>
+  Aunque hay muchas opciones, y además del ser usado por defecto por very_good_cli, considero a Flutter BLoC mi preferido por la facilidad del testeo que tengo al usar `bloc_test`.
+</details>
 
-```sh
-# Generate Coverage Report
-$ genhtml coverage/lcov.info -o coverage/
 
-# Open Coverage Report
-$ open coverage/index.html
-```
 
----
-
-## Working with Translations 🌐
-
-This project relies on [flutter_localizations][flutter_localizations_link] and follows the [official internationalization guide for Flutter][internationalization_link].
-
-### Adding Strings
-
-1. To add a new localizable string, open the `app_en.arb` file at `lib/l10n/arb/app_en.arb`.
-
-```arb
-{
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
-}
-```
-
-2. Then add a new key/value and description
-
-```arb
-{
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    },
-    "helloWorld": "Hello World",
-    "@helloWorld": {
-        "description": "Hello World Text"
-    }
-}
-```
-
-3. Use the new string
-
-```dart
-import 'package:dd3/l10n/l10n.dart';
-
-@override
-Widget build(BuildContext context) {
-  final l10n = context.l10n;
-  return Text(l10n.helloWorld);
-}
-```
-
-### Adding Supported Locales
-
-Update the `CFBundleLocalizations` array in the `Info.plist` at `ios/Runner/Info.plist` to include the new locale.
-
-```xml
-    ...
-
-    <key>CFBundleLocalizations</key>
-	<array>
-		<string>en</string>
-		<string>es</string>
-	</array>
-
-    ...
-```
-
-### Adding Translations
-
-1. For each supported locale, add a new ARB file in `lib/l10n/arb`.
-
-```
-├── l10n
-│   ├── arb
-│   │   ├── app_en.arb
-│   │   └── app_es.arb
-```
-
-2. Add the translated strings to each `.arb` file:
-
-`app_en.arb`
-
-```arb
-{
-    "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
-}
-```
-
-`app_es.arb`
-
-```arb
-{
-    "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
-    }
-}
-```
 
 [coverage_badge]: coverage_badge.svg
 [flutter_localizations_link]: https://api.flutter.dev/flutter/flutter_localizations/flutter_localizations-library.html
