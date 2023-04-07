@@ -45,6 +45,10 @@ class _HeroContentState extends State<HeroContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
