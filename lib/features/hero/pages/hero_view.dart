@@ -7,7 +7,6 @@ import 'package:dd3/features/hero/widgets/stories_section.dart';
 import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 
@@ -36,29 +35,23 @@ class HeroView extends StatelessWidget {
   }
 }
 
-class HeroContent extends StatefulWidget {
+@visibleForTesting
+class HeroContent extends StatelessWidget {
   const HeroContent({super.key, required this.character});
   final Character character;
-  @override
-  State<HeroContent> createState() => _HeroContentState();
-}
-
-class _HeroContentState extends State<HeroContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-      ),
+      appBar: AppBar(backgroundColor: Colors.transparent),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           NetworkImageWidget(
-            imageUrl: widget.character.thumbnail ?? noImageMarvel,
+            imageUrl: character.thumbnail ?? noImageMarvel,
             imageWidgetBuilder: (image) {
               return Hero(
-                tag: 'hero-${widget.character.id}-image',
+                tag: 'hero-${character.id}-image',
                 child: Image(
                   image: image,
                   fit: BoxFit.cover,
@@ -89,18 +82,18 @@ class _HeroContentState extends State<HeroContent> {
                 children: <Widget>[
                   SizedBox(height: MediaQuery.of(context).size.height * .5),
                   Hero(
-                    tag: 'hero-${widget.character.id}',
+                    tag: 'hero-${character.id}',
                     child: Text(
-                      widget.character.name,
+                      character.name,
                       style: const TextStyle(
                         fontSize: 55,
                         fontWeight: FontWeight.bold,
                       ),
-                    ).animate().fadeIn().scale(),
+                    ),
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    widget.character.description,
+                    character.description,
                     style: const TextStyle(fontSize: 18),
                   ),
                   const SizedBox(height: 16),

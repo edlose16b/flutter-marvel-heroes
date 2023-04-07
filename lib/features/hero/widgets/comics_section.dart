@@ -1,6 +1,5 @@
 import 'package:dd3/app/ui/sizes.dart';
 import 'package:dd3/features/hero/logic/hero_cubit.dart';
-import 'package:dd3/features/hero/widgets/detail_modal.dart';
 import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
