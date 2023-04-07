@@ -30,11 +30,15 @@ ThemeData buildDarkTheme(BuildContext context) {
   return ThemeData.dark().copyWith(
     primaryColor: Palette.primary,
     textTheme: GoogleFonts.nunitoTextTheme(darkTheme.textTheme),
-    appBarTheme: AppBarTheme(
+    scaffoldBackgroundColor: Colors.black,
+    appBarTheme: const AppBarTheme(
       elevation: 0,
-      backgroundColor: darkTheme.scaffoldBackgroundColor,
-      titleTextStyle:
-          const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      // backgroundColor: darkTheme.scaffoldBackgroundColor,
+      backgroundColor: Colors.black,
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   );
 }
