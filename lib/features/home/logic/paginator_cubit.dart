@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 class PaginatorCubit extends Cubit<PaginatorState> {
-  PaginatorCubit() : super(PaginatorState(currentPage: 1, origin: null));
+  PaginatorCubit() : super(const PaginatorState(currentPage: 1, origin: null));
 
   void setPage(int page, {PaginatorChangeOrigin? origin}) {
     if (state.currentPage == page) return;

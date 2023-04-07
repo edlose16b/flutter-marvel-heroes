@@ -2,8 +2,8 @@ import 'package:dd3/features/hero/pages/hero_view.dart';
 import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
-import 'package:marvel/marvel.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:marvel/marvel.dart';
 
 class SuperHeroCardItem extends StatelessWidget {
   const SuperHeroCardItem({super.key, required this.character});

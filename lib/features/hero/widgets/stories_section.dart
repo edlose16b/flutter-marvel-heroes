@@ -11,8 +11,7 @@ class StoriesSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final stories =
-        context.select((HeroCubit cubit) => cubit.state.stories);
+    final stories = context.select((HeroCubit cubit) => cubit.state.stories);
 
     if (stories != null && stories.isEmpty) return const SizedBox.shrink();
     return Column(

@@ -14,7 +14,6 @@ class HeroesCubit extends Cubit<HeroesState> {
         );
   final CharactersRepository charactersRepository;
 
-  
   Future<void> loadMore() async {
     if (state.status == HeroesStatus.loading) return;
 
