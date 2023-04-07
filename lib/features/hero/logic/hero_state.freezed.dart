@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CharacterState {
+mixin _$HeroState {
   Character get character => throw _privateConstructorUsedError;
   CharacterStateStatus get status => throw _privateConstructorUsedError;
   List<Comic>? get comics => throw _privateConstructorUsedError;
@@ -24,15 +24,15 @@ mixin _$CharacterState {
   List<Story>? get stories => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CharacterStateCopyWith<CharacterState> get copyWith =>
+  $CharacterStateCopyWith<HeroState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CharacterStateCopyWith<$Res> {
   factory $CharacterStateCopyWith(
-          CharacterState value, $Res Function(CharacterState) then) =
-      _$CharacterStateCopyWithImpl<$Res, CharacterState>;
+          HeroState value, $Res Function(HeroState) then) =
+      _$CharacterStateCopyWithImpl<$Res, HeroState>;
   @useResult
   $Res call(
       {Character character,
@@ -44,7 +44,7 @@ abstract class $CharacterStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CharacterStateCopyWithImpl<$Res, $Val extends CharacterState>
+class _$CharacterStateCopyWithImpl<$Res, $Val extends HeroState>
     implements $CharacterStateCopyWith<$Res> {
   _$CharacterStateCopyWithImpl(this._value, this._then);
 
@@ -217,7 +217,7 @@ class _$_CharacterStateDataClass implements _CharacterStateDataClass {
 
   @override
   String toString() {
-    return 'CharacterState(character: $character, status: $status, comics: $comics, events: $events, series: $series, stories: $stories)';
+    return 'HeroState(character: $character, status: $status, comics: $comics, events: $events, series: $series, stories: $stories)';
   }
 
   @override
@@ -253,7 +253,7 @@ class _$_CharacterStateDataClass implements _CharacterStateDataClass {
               this, _$identity);
 }
 
-abstract class _CharacterStateDataClass implements CharacterState {
+abstract class _CharacterStateDataClass implements HeroState {
   const factory _CharacterStateDataClass(
       {required final Character character,
       required final CharacterStateStatus status,

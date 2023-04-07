@@ -24,17 +24,17 @@ void main() {
     cubit = HeroCubit(charactersRepository: repository, character: character);
   });
 
-  blocTest<HeroCubit, CharacterState>(
+  blocTest<HeroCubit, HeroState>(
     'initial state should be initial',
     build: () => cubit,
     verify: (bloc) {
-      expect(bloc.state, isA<CharacterState>());
+      expect(bloc.state, isA<HeroState>());
       expect(bloc.state.status, equals(CharacterStateStatus.initial));
       verifyNever(() => repository.fetchComics(any()));
     },
   );
 
-  blocTest<HeroCubit, CharacterState>(
+  blocTest<HeroCubit, HeroState>(
     'should calls api when call [fetchData]',
     build: () => cubit,
     setUp: () {
@@ -55,10 +55,10 @@ void main() {
       bloc.fetchData();
     },
     verify: (bloc) {
-      expect(bloc.state, isA<CharacterState>());
+      expect(bloc.state, isA<HeroState>());
       expect(
         bloc.state,
-        CharacterState(
+        HeroState(
           character: character,
           status: CharacterStateStatus.initial,
           comics: [],

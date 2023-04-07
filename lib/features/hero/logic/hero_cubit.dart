@@ -6,12 +6,12 @@ import 'package:dd3/features/hero/logic/hero_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 
-class HeroCubit extends Cubit<CharacterState> {
+class HeroCubit extends Cubit<HeroState> {
   HeroCubit({
     required this.charactersRepository,
     required this.character,
   }) : super(
-          CharacterState(
+          HeroState(
             character: character,
             status: CharacterStateStatus.initial,
           ),

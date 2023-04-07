@@ -6,8 +6,8 @@ part 'hero_state.freezed.dart';
 enum CharacterStateStatus { initial, loading, failed, loaded }
 
 @freezed
-abstract class CharacterState with _$CharacterState {
-  const factory CharacterState({
+abstract class HeroState with _$HeroState {
+  const factory HeroState({
     required Character character,
     required CharacterStateStatus status,
     List<Comic>? comics,
