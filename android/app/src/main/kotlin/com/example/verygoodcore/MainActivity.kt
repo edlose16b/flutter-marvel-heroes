@@ -1,4 +1,4 @@
-package com.example.verygoodcore.dd3
+package com.example.verygoodcore.marvelheroes
 
 import io.flutter.embedding.android.FlutterActivity
 

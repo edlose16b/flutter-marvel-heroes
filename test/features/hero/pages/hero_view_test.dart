@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:dd3/features/hero/logic/hero_cubit.dart';
-import 'package:dd3/features/hero/logic/hero_state.dart';
-import 'package:dd3/features/hero/pages/hero_view.dart';
-import 'package:dd3/features/hero/widgets/comics_section.dart';
-import 'package:dd3/features/hero/widgets/events_section.dart';
-import 'package:dd3/features/hero/widgets/series_section.dart';
-import 'package:dd3/features/hero/widgets/stories_section.dart';
+import 'package:marvelheroes/features/hero/logic/hero_cubit.dart';
+import 'package:marvelheroes/features/hero/logic/hero_state.dart';
+import 'package:marvelheroes/features/hero/pages/hero_view.dart';
+import 'package:marvelheroes/features/hero/widgets/comics_section.dart';
+import 'package:marvelheroes/features/hero/widgets/events_section.dart';
+import 'package:marvelheroes/features/hero/widgets/series_section.dart';
+import 'package:marvelheroes/features/hero/widgets/stories_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';

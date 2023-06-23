@@ -1,7 +1,7 @@
-import 'package:dd3/app/ui/sizes.dart';
-import 'package:dd3/features/hero/logic/hero_cubit.dart';
-import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
-import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
+import 'package:marvelheroes/app/ui/sizes.dart';
+import 'package:marvelheroes/features/hero/logic/hero_cubit.dart';
+import 'package:marvelheroes/features/shared/ui/loadings/cards_horizontal_loader.dart';
+import 'package:marvelheroes/features/shared/ui/widgets/image_title.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';

@@ -1,5 +1,5 @@
-import 'package:dd3/core/constants.dart';
-import 'package:dd3/features/home/logic/heroes_state.dart';
+import 'package:marvelheroes/core/constants.dart';
+import 'package:marvelheroes/features/home/logic/heroes_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 

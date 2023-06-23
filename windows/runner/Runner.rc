@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example.verygoodcore.dd3" "\0"
-            VALUE "FileDescription", "dd3" "\0"
+            VALUE "CompanyName", "com.example.verygoodcore.marvelheroes" "\0"
+            VALUE "FileDescription", "marvelheroes" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "dd3" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.verygoodcore.dd3. All rights reserved." "\0"
-            VALUE "OriginalFilename", "dd3.exe" "\0"
-            VALUE "ProductName", "Dd3" "\0"
+            VALUE "InternalName", "marvelheroes" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.verygoodcore.marvelheroes. All rights reserved." "\0"
+            VALUE "OriginalFilename", "marvelheroes.exe" "\0"
+            VALUE "ProductName", "Marvel Heroes" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,4 +1,4 @@
-import 'package:dd3/core/constants.dart';
+import 'package:marvelheroes/core/constants.dart';
 import 'package:dio/dio.dart';
 import 'package:marvel/marvel.dart';
 

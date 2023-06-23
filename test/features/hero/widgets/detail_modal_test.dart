@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:dd3/features/hero/widgets/detail_modal.dart';
-import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
+import 'package:marvelheroes/features/hero/widgets/detail_modal.dart';
+import 'package:marvelheroes/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

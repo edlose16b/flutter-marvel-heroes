@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(dd3 LANGUAGES CXX)
+project(marvelheroes LANGUAGES CXX)
 
-set(BINARY_NAME "dd3")
+set(BINARY_NAME "marvelheroes")
 
 cmake_policy(SET CMP0063 NEW)
 

@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:dd3/app/app.dart';
-import 'package:dd3/bootstrap.dart';
+import 'package:marvelheroes/app/app.dart';
+import 'package:marvelheroes/bootstrap.dart';
 import 'package:flutter/material.dart';
 
 void main() async {

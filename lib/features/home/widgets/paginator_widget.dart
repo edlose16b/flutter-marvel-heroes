@@ -1,4 +1,4 @@
-import 'package:dd3/features/home/logic/paginator_cubit.dart';
+import 'package:marvelheroes/features/home/logic/paginator_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

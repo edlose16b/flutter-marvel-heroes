@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dartz/dartz.dart';
-import 'package:dd3/core/constants.dart';
-import 'package:dd3/features/home/logic/heroes_cubit.dart';
-import 'package:dd3/features/home/logic/heroes_state.dart';
+import 'package:marvelheroes/core/constants.dart';
+import 'package:marvelheroes/features/home/logic/heroes_cubit.dart';
+import 'package:marvelheroes/features/home/logic/heroes_state.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:marvel/marvel.dart';
 import 'package:mocktail/mocktail.dart';

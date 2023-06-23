@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_redundant_argument_values
 
-import 'package:dd3/core/constants.dart';
-import 'package:dd3/core/interceptors/marvel_api_interceptor.dart';
+import 'package:marvelheroes/core/constants.dart';
+import 'package:marvelheroes/core/interceptors/marvel_api_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,8 +1,8 @@
-import 'package:dd3/app/bloc_dependencies.dart';
-import 'package:dd3/app/dependency_injections.dart';
-import 'package:dd3/app/themes.dart';
-import 'package:dd3/features/home/pages/home_view.dart';
-import 'package:dd3/l10n/l10n.dart';
+import 'package:marvelheroes/app/bloc_dependencies.dart';
+import 'package:marvelheroes/app/dependency_injections.dart';
+import 'package:marvelheroes/app/themes.dart';
+import 'package:marvelheroes/features/home/pages/home_view.dart';
+import 'package:marvelheroes/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {

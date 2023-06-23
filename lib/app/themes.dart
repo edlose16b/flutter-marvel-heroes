@@ -1,5 +1,5 @@
-import 'package:dd3/app/ui/colors.dart';
-import 'package:dd3/app/ui/material.dart';
+import 'package:marvelheroes/app/ui/colors.dart';
+import 'package:marvelheroes/app/ui/material.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

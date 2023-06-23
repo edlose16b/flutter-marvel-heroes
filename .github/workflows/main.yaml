@@ -1,4 +1,4 @@
-name: dd3
+name: marvelheroes
 
 concurrency:
   group: $-$

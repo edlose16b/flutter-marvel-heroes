@@ -1,10 +1,10 @@
-import 'package:dd3/core/constants.dart';
-import 'package:dd3/features/home/logic/heroes_cubit.dart';
-import 'package:dd3/features/home/logic/heroes_state.dart';
-import 'package:dd3/features/home/logic/paginator_cubit.dart';
-import 'package:dd3/features/home/widgets/paginator_widget.dart';
-import 'package:dd3/features/home/widgets/superhero_card_item.dart';
-import 'package:dd3/features/shared/ui/loadings/hero_card_loader.dart';
+import 'package:marvelheroes/core/constants.dart';
+import 'package:marvelheroes/features/home/logic/heroes_cubit.dart';
+import 'package:marvelheroes/features/home/logic/heroes_state.dart';
+import 'package:marvelheroes/features/home/logic/paginator_cubit.dart';
+import 'package:marvelheroes/features/home/widgets/paginator_widget.dart';
+import 'package:marvelheroes/features/home/widgets/superhero_card_item.dart';
+import 'package:marvelheroes/features/shared/ui/loadings/hero_card_loader.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -56,7 +56,7 @@ class _HomeContentState extends State<HomeContent> {
     return BlocBuilder<HeroesCubit, HeroesState>(
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(title: const Text('DD3 Prueba')),
+          appBar: AppBar(title: const Text('Marvel Heroes')),
           body: Container(
             margin: const EdgeInsets.only(bottom: 30),
             child: BlocListener<PaginatorCubit, PaginatorState>(

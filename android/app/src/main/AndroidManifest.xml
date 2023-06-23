@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.verygoodcore.dd3">
+    package="com.example.verygoodcore.marvelheroes">
    <application
-        android:label="dd3"
+        android:label="marvelheroes"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

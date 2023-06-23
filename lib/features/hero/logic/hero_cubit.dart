@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-import 'package:dd3/features/hero/logic/hero_state.dart';
+import 'package:marvelheroes/features/hero/logic/hero_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
 

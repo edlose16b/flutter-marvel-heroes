@@ -1,5 +1,5 @@
-import 'package:dd3/app/ui/sizes.dart';
-import 'package:dd3/features/shared/ui/widgets/cached_network_image.dart';
+import 'package:marvelheroes/app/ui/sizes.dart';
+import 'package:marvelheroes/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class DetailModal extends StatelessWidget {
