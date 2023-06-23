@@ -127,5 +127,5 @@ app.*.map.json
 !.idea/runConfigurations/
 
 # env
-.env
+.env.dev.json
 .env.json
