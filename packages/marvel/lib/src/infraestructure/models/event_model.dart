@@ -23,12 +23,9 @@ class EventModel extends Event {
       id: json['id'] as int,
       title: json['title'] as String,
       description: json['description'] as String,
-      thumbnail:
-          thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
+      thumbnail: thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
       modified: DateTime.parse(json['modified'] as String),
-      start: json['start'] != null
-          ? DateTime.parse(json['start'] as String)
-          : null,
+      start: json['start'] != null ? DateTime.parse(json['start'] as String) : null,
       end: json['end'] != null ? DateTime.parse(json['end'] as String) : null,
     );
   }

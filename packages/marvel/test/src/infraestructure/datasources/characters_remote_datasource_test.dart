@@ -19,8 +19,7 @@ void main() {
     test('should return a list of characters', () async {
       // arrange
 
-      final responseJson =
-          simulateMarvelResponse([characterJson1, characterJson1]);
+      final responseJson = simulateMarvelResponse([characterJson1, characterJson1]);
 
       dioAdapter.onGet(
         '?limit=20&offset=0',

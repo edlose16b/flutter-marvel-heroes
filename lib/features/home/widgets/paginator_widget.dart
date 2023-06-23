@@ -7,8 +7,7 @@ class PaginatorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final page =
-        context.select((PaginatorCubit cubit) => cubit.state.currentPage);
+    final page = context.select((PaginatorCubit cubit) => cubit.state.currentPage);
     return SafeArea(
       maintainBottomViewPadding: true,
       child: Container(
@@ -54,8 +53,7 @@ class _PaginatorWidget extends StatelessWidget {
     } else if (currentPage <= 3) {
       visiblePages.addAll([1, 2, 3, 4, -1, lastPage]);
     } else if (currentPage > lastPage - 3) {
-      visiblePages
-          .addAll([1, -1, lastPage - 3, lastPage - 2, lastPage - 1, lastPage]);
+      visiblePages.addAll([1, -1, lastPage - 3, lastPage - 2, lastPage - 1, lastPage]);
     } else {
       visiblePages.addAll([
         1,
@@ -79,9 +77,7 @@ class _PaginatorWidget extends StatelessWidget {
                     page.toString(),
                     style: TextStyle(
                       color: page == currentPage ? Colors.blue : Colors.white,
-                      fontWeight: page == currentPage
-                          ? FontWeight.bold
-                          : FontWeight.normal,
+                      fontWeight: page == currentPage ? FontWeight.bold : FontWeight.normal,
                     ),
                   ),
                   onPressed: () {

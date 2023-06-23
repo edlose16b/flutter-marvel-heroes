@@ -21,8 +21,7 @@ class CharacterModel extends Character {
       name: json['name'] as String,
       description: json['description'] as String,
       modified: DateTime.parse(json['modified'] as String),
-      thumbnail:
-          thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
+      thumbnail: thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
     );
   }
 }

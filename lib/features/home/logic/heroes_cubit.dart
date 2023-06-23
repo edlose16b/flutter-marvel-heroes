@@ -23,8 +23,7 @@ class HeroesCubit extends Cubit<HeroesState> {
         itemsLoading: Constants.heroesPerPage,
       ),
     );
-    final response =
-        await charactersRepository.fetchCharacters(offset: state.heroes.length);
+    final response = await charactersRepository.fetchCharacters(offset: state.heroes.length);
 
     response.fold((l) {
       emit(state.copyWith(status: HeroesStatus.failed));

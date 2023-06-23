@@ -48,8 +48,7 @@ void main() {
       );
 
       // act
-      await widgetTester
-          .pumpApp(setUpPump(HeroContent(character: characterEntity)));
+      await widgetTester.pumpApp(setUpPump(HeroContent(character: characterEntity)));
 
       //assert
       expect(find.text(characterEntity.name), findsOneWidget);
@@ -70,8 +69,7 @@ void main() {
       );
 
       // act
-      await widgetTester
-          .pumpApp(setUpPump(HeroContent(character: characterEntity)));
+      await widgetTester.pumpApp(setUpPump(HeroContent(character: characterEntity)));
 
       //assert
       expect(find.text(characterEntity.name), findsOneWidget);

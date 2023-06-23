@@ -21,22 +21,19 @@ mixin _$HeroesState {
   List<Character> get heroes => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HeroesStateCopyWith<HeroesState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HeroesStateCopyWith<HeroesState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HeroesStateCopyWith<$Res> {
-  factory $HeroesStateCopyWith(
-          HeroesState value, $Res Function(HeroesState) then) =
+  factory $HeroesStateCopyWith(HeroesState value, $Res Function(HeroesState) then) =
       _$HeroesStateCopyWithImpl<$Res, HeroesState>;
   @useResult
   $Res call({HeroesStatus status, int itemsLoading, List<Character> heroes});
 }
 
 /// @nodoc
-class _$HeroesStateCopyWithImpl<$Res, $Val extends HeroesState>
-    implements $HeroesStateCopyWith<$Res> {
+class _$HeroesStateCopyWithImpl<$Res, $Val extends HeroesState> implements $HeroesStateCopyWith<$Res> {
   _$HeroesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -69,10 +66,8 @@ class _$HeroesStateCopyWithImpl<$Res, $Val extends HeroesState>
 }
 
 /// @nodoc
-abstract class _$$_HeroesStateDataClassCopyWith<$Res>
-    implements $HeroesStateCopyWith<$Res> {
-  factory _$$_HeroesStateDataClassCopyWith(_$_HeroesStateDataClass value,
-          $Res Function(_$_HeroesStateDataClass) then) =
+abstract class _$$_HeroesStateDataClassCopyWith<$Res> implements $HeroesStateCopyWith<$Res> {
+  factory _$$_HeroesStateDataClassCopyWith(_$_HeroesStateDataClass value, $Res Function(_$_HeroesStateDataClass) then) =
       __$$_HeroesStateDataClassCopyWithImpl<$Res>;
   @override
   @useResult
@@ -80,11 +75,9 @@ abstract class _$$_HeroesStateDataClassCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_HeroesStateDataClassCopyWithImpl<$Res>
-    extends _$HeroesStateCopyWithImpl<$Res, _$_HeroesStateDataClass>
+class __$$_HeroesStateDataClassCopyWithImpl<$Res> extends _$HeroesStateCopyWithImpl<$Res, _$_HeroesStateDataClass>
     implements _$$_HeroesStateDataClassCopyWith<$Res> {
-  __$$_HeroesStateDataClassCopyWithImpl(_$_HeroesStateDataClass _value,
-      $Res Function(_$_HeroesStateDataClass) _then)
+  __$$_HeroesStateDataClassCopyWithImpl(_$_HeroesStateDataClass _value, $Res Function(_$_HeroesStateDataClass) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -115,9 +108,7 @@ class __$$_HeroesStateDataClassCopyWithImpl<$Res>
 
 class _$_HeroesStateDataClass implements _HeroesStateDataClass {
   const _$_HeroesStateDataClass(
-      {required this.status,
-      required this.itemsLoading,
-      required final List<Character> heroes})
+      {required this.status, required this.itemsLoading, required final List<Character> heroes})
       : _heroes = heroes;
 
   @override
@@ -143,21 +134,18 @@ class _$_HeroesStateDataClass implements _HeroesStateDataClass {
         (other.runtimeType == runtimeType &&
             other is _$_HeroesStateDataClass &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.itemsLoading, itemsLoading) ||
-                other.itemsLoading == itemsLoading) &&
+            (identical(other.itemsLoading, itemsLoading) || other.itemsLoading == itemsLoading) &&
             const DeepCollectionEquality().equals(other._heroes, _heroes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status, itemsLoading,
-      const DeepCollectionEquality().hash(_heroes));
+  int get hashCode => Object.hash(runtimeType, status, itemsLoading, const DeepCollectionEquality().hash(_heroes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_HeroesStateDataClassCopyWith<_$_HeroesStateDataClass> get copyWith =>
-      __$$_HeroesStateDataClassCopyWithImpl<_$_HeroesStateDataClass>(
-          this, _$identity);
+      __$$_HeroesStateDataClassCopyWithImpl<_$_HeroesStateDataClass>(this, _$identity);
 }
 
 abstract class _HeroesStateDataClass implements HeroesState {
@@ -174,6 +162,5 @@ abstract class _HeroesStateDataClass implements HeroesState {
   List<Character> get heroes;
   @override
   @JsonKey(ignore: true)
-  _$$_HeroesStateDataClassCopyWith<_$_HeroesStateDataClass> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_HeroesStateDataClassCopyWith<_$_HeroesStateDataClass> get copyWith => throw _privateConstructorUsedError;
 }

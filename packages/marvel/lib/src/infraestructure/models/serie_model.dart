@@ -24,8 +24,7 @@ class SerieModel extends Serie {
       id: json['id'] as int,
       title: json['title'] as String,
       description: json['description'] as String?,
-      thumbnail:
-          thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
+      thumbnail: thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
       startYear: json['startYear'] as int,
       endYear: json['endYear'] as int,
       rating: json['rating'] as String,

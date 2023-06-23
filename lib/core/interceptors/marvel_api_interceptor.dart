@@ -13,8 +13,7 @@ class MarvelApiInterceptor extends Interceptor {
       timestamp,
     );
 
-    options.queryParameters
-        .addAll({'apikey': Constants.publicKey, 'hash': hash, 'ts': timestamp});
+    options.queryParameters.addAll({'apikey': Constants.publicKey, 'hash': hash, 'ts': timestamp});
 
     return handler.next(options);
   }

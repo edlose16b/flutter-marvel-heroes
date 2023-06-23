@@ -27,8 +27,7 @@ class ComicModel extends Comic {
       variantDescription: json['variantDescription'] as String,
       description: json['description'] as String?,
       modified: DateTime.parse(json['modified'] as String),
-      thumbnail:
-          thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
+      thumbnail: thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
     );
   }
 }

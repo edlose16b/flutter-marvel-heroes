@@ -24,8 +24,7 @@ class StoryModel extends Story {
       description: json['description'] as String,
       type: json['type'] as String,
       modified: DateTime.parse(json['modified'] as String),
-      thumbnail:
-          thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
+      thumbnail: thumbnailJsonToString(json['thumbnail'] as Map<String, dynamic>?),
     );
   }
 }

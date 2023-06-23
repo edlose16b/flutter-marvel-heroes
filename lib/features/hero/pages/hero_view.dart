@@ -18,8 +18,7 @@ class HeroView extends StatelessWidget {
 
   final Character character;
 
-  static Route<dynamic> route({required Character character}) =>
-      MaterialPageRoute(
+  static Route<dynamic> route({required Character character}) => MaterialPageRoute(
         builder: (_) => HeroView(character: character),
       );
 

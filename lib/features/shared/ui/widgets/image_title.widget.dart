@@ -2,8 +2,7 @@ import 'package:marvelheroes/features/hero/widgets/detail_modal.dart';
 import 'package:marvelheroes/features/shared/ui/widgets/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-const noImageMarvel =
-    'https://i.pinimg.com/originals/64/25/d3/6425d375a54d8bd3331a3ed6a3b25fe7.jpg';
+const noImageMarvel = 'https://i.pinimg.com/originals/64/25/d3/6425d375a54d8bd3331a3ed6a3b25fe7.jpg';
 
 /// {@tempalte image_title}
 /// It renders a Image and a title

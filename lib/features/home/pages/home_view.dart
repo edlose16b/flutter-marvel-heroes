@@ -19,8 +19,7 @@ class HomeView extends StatelessWidget {
           create: (_) => PaginatorCubit(),
         ),
         BlocProvider(
-          create: (_) =>
-              HeroesCubit(charactersRepository: context.read())..loadMore(),
+          create: (_) => HeroesCubit(charactersRepository: context.read())..loadMore(),
         ),
       ],
       child: const HomeContent(),
@@ -86,8 +85,7 @@ class _HomeContentState extends State<HomeContent> {
         mainAxisSpacing: 20,
       ),
       itemBuilder: (context, index) {
-        if (state.status == HeroesStatus.loading &&
-            index >= state.heroes.length) {
+        if (state.status == HeroesStatus.loading && index >= state.heroes.length) {
           return const HeroCardLoader();
         }
 
@@ -102,9 +100,7 @@ class _HomeContentState extends State<HomeContent> {
       context.read<HeroesCubit>().loadMore();
     }
 
-    context
-        .read<PaginatorCubit>()
-        .setPage(currentPageOnScroll, origin: PaginatorChangeOrigin.scroll);
+    context.read<PaginatorCubit>().setPage(currentPageOnScroll, origin: PaginatorChangeOrigin.scroll);
   }
 
   @override
@@ -126,12 +122,7 @@ class _HomeContentState extends State<HomeContent> {
   }
 
   /// when scroll is about to touch the bottom of the scroll
-  bool get isAboutToBottom =>
-      _scrollController.offset >=
-      _scrollController.position.maxScrollExtent - sizePerRow;
+  bool get isAboutToBottom => _scrollController.offset >= _scrollController.position.maxScrollExtent - sizePerRow;
 
-  int get currentPageOnScroll =>
-      (_scrollController.offset ~/
-          (sizePerRow * Constants.heroesPerPage / itemsPerRow)) +
-      1;
+  int get currentPageOnScroll => (_scrollController.offset ~/ (sizePerRow * Constants.heroesPerPage / itemsPerRow)) + 1;
 }

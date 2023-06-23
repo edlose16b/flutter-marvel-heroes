@@ -13,8 +13,7 @@ import 'package:marvel/src/infraestructure/datasources/remote_datasource.dart';
 /// {@endtemplate}
 class CharactersRepositoryImpl implements CharactersRepository {
   /// {@macro characters_repository_implementation}
-  CharactersRepositoryImpl({required CharactersRemoteDataSource dataSource})
-      : _dataSource = dataSource;
+  CharactersRepositoryImpl({required CharactersRemoteDataSource dataSource}) : _dataSource = dataSource;
 
   final CharactersRemoteDataSource _dataSource;
 

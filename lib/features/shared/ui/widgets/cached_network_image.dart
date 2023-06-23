@@ -24,10 +24,8 @@ class NetworkImageWidget extends StatelessWidget {
       width: width,
       height: height,
       fit: fit ?? BoxFit.cover,
-      imageBuilder: (context, imageProvider) =>
-          imageWidgetBuilder(imageProvider),
-      placeholder: (context, url) =>
-          const Center(child: CircularProgressIndicator()),
+      imageBuilder: (context, imageProvider) => imageWidgetBuilder(imageProvider),
+      placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
     );
   }
 }

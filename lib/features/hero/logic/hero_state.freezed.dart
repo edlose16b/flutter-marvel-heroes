@@ -24,14 +24,12 @@ mixin _$HeroState {
   List<Story>? get stories => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HeroStateCopyWith<HeroState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HeroStateCopyWith<HeroState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HeroStateCopyWith<$Res> {
-  factory $HeroStateCopyWith(HeroState value, $Res Function(HeroState) then) =
-      _$HeroStateCopyWithImpl<$Res, HeroState>;
+  factory $HeroStateCopyWith(HeroState value, $Res Function(HeroState) then) = _$HeroStateCopyWithImpl<$Res, HeroState>;
   @useResult
   $Res call(
       {Character character,
@@ -43,8 +41,7 @@ abstract class $HeroStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HeroStateCopyWithImpl<$Res, $Val extends HeroState>
-    implements $HeroStateCopyWith<$Res> {
+class _$HeroStateCopyWithImpl<$Res, $Val extends HeroState> implements $HeroStateCopyWith<$Res> {
   _$HeroStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -92,10 +89,9 @@ class _$HeroStateCopyWithImpl<$Res, $Val extends HeroState>
 }
 
 /// @nodoc
-abstract class _$$_CharacterStateDataClassCopyWith<$Res>
-    implements $HeroStateCopyWith<$Res> {
-  factory _$$_CharacterStateDataClassCopyWith(_$_CharacterStateDataClass value,
-          $Res Function(_$_CharacterStateDataClass) then) =
+abstract class _$$_CharacterStateDataClassCopyWith<$Res> implements $HeroStateCopyWith<$Res> {
+  factory _$$_CharacterStateDataClassCopyWith(
+          _$_CharacterStateDataClass value, $Res Function(_$_CharacterStateDataClass) then) =
       __$$_CharacterStateDataClassCopyWithImpl<$Res>;
   @override
   @useResult
@@ -109,11 +105,10 @@ abstract class _$$_CharacterStateDataClassCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CharacterStateDataClassCopyWithImpl<$Res>
-    extends _$HeroStateCopyWithImpl<$Res, _$_CharacterStateDataClass>
+class __$$_CharacterStateDataClassCopyWithImpl<$Res> extends _$HeroStateCopyWithImpl<$Res, _$_CharacterStateDataClass>
     implements _$$_CharacterStateDataClassCopyWith<$Res> {
-  __$$_CharacterStateDataClassCopyWithImpl(_$_CharacterStateDataClass _value,
-      $Res Function(_$_CharacterStateDataClass) _then)
+  __$$_CharacterStateDataClassCopyWithImpl(
+      _$_CharacterStateDataClass _value, $Res Function(_$_CharacterStateDataClass) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -224,8 +219,7 @@ class _$_CharacterStateDataClass implements _CharacterStateDataClass {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CharacterStateDataClass &&
-            (identical(other.character, character) ||
-                other.character == character) &&
+            (identical(other.character, character) || other.character == character) &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._comics, _comics) &&
             const DeepCollectionEquality().equals(other._events, _events) &&
@@ -246,10 +240,8 @@ class _$_CharacterStateDataClass implements _CharacterStateDataClass {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CharacterStateDataClassCopyWith<_$_CharacterStateDataClass>
-      get copyWith =>
-          __$$_CharacterStateDataClassCopyWithImpl<_$_CharacterStateDataClass>(
-              this, _$identity);
+  _$$_CharacterStateDataClassCopyWith<_$_CharacterStateDataClass> get copyWith =>
+      __$$_CharacterStateDataClassCopyWithImpl<_$_CharacterStateDataClass>(this, _$identity);
 }
 
 abstract class _CharacterStateDataClass implements HeroState {
@@ -275,6 +267,5 @@ abstract class _CharacterStateDataClass implements HeroState {
   List<Story>? get stories;
   @override
   @JsonKey(ignore: true)
-  _$$_CharacterStateDataClassCopyWith<_$_CharacterStateDataClass>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$_CharacterStateDataClassCopyWith<_$_CharacterStateDataClass> get copyWith => throw _privateConstructorUsedError;
 }

@@ -3,8 +3,7 @@ import 'package:marvel/marvel.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:test/test.dart';
 
-class MockCharactersRemoteDataSource extends Mock
-    implements CharactersRemoteDataSource {}
+class MockCharactersRemoteDataSource extends Mock implements CharactersRemoteDataSource {}
 
 void main() {
   late CharactersRepository repository;

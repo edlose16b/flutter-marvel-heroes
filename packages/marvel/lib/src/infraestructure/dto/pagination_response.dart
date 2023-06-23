@@ -12,8 +12,7 @@ class PaginationResponse {
   });
 
   /// returns a [PaginationResponse] from a json
-  factory PaginationResponse.fromJson(Map<String, dynamic> json) =>
-      PaginationResponse(
+  factory PaginationResponse.fromJson(Map<String, dynamic> json) => PaginationResponse(
         offset: json['offset'] as int,
         limit: json['limit'] as int,
         total: json['total'] as int,
