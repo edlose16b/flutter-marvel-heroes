@@ -2,6 +2,7 @@ import 'package:dd3/app/ui/sizes.dart';
 import 'package:dd3/features/hero/logic/hero_cubit.dart';
 import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
+import 'package:dd3/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marvel/marvel.dart';
@@ -18,7 +19,7 @@ class StoriesSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Stories',
+          context.l10n.stories,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: Sizes.mid),

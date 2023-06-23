@@ -128,3 +128,4 @@ app.*.map.json
 
 # env
 .env
+.env.json

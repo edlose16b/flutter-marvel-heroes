@@ -2,6 +2,7 @@ import 'package:dd3/app/ui/sizes.dart';
 import 'package:dd3/features/hero/logic/hero_cubit.dart';
 import 'package:dd3/features/shared/ui/loadings/cards_horizontal_loader.dart';
 import 'package:dd3/features/shared/ui/widgets/image_title.widget.dart';
+import 'package:dd3/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -18,7 +19,7 @@ class EventsSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Events',
+          context.l10n.events,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(height: Sizes.mid),
